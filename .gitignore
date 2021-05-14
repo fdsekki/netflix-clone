@@ -1,3 +1,8 @@
+.firebaserc
+hosting.YnVpbGQ.cache
+firebase-hosting-merge.yml
+firebase-hosting-pull-request.yml
+
 # Logs
 logs
 *.log
