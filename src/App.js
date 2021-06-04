@@ -8,13 +8,10 @@ import Nav from './Nav';
 function App() {
   return (
     <>
-      {/* Navbar */}
       <Nav />
       
-      {/* Banner */}
       <Banner />
 
-      {/* Movies */}
       <div className="app">
         <MoviesRow title="Netflix Originals" isLargeRow fetchUrl={requests.fetchNetflixOriginals} />
         <MoviesRow title="Trending Now" fetchUrl={requests.fetchTrending} />
