@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from './axios'; /* when we have a default export, we can rename variables, Ex: from instance to axios */
+import axios from './axios';
 import "./MoviesRow.css";
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
@@ -10,25 +10,15 @@ function MoviesRow(props) {
   const [movies, setMovies] = React.useState([]);
   const [trailerUrl, setTrailerUrl] = React.useState("");
 
-  // A snippet of code which runs based on a specific condition/variable
   React.useEffect(() => {
-    // if [] are blank, run once when the row loads, and dont run again
     async function fetchData() {
       const request = await axios.get(props.fetchUrl);
-      // console.log(request); /* request.data.results */
       setMovies(request.data.results);
       return request;
     }
     fetchData();
-    /*
-      whenever you use anything inside of a useEffect
-      if there is any variable that is being pulled from outside,
-      you have to include it inside of [], because it is dependent
-      on that variable
-    */
   }, [props.fetchUrl]);
 
-  // console.log(movies)
 
   const opts = {
     height: "390",
@@ -53,12 +43,9 @@ function MoviesRow(props) {
 
   return(
     <div className="moviesrow">
-      {/* title */}
       <h2>{props.title}</h2>
 
-      {/* container -> posters */}
       <div className="moviesrow__posters">
-        {/* several row__poster(s) */}
         {movies.map(movie => (
           <img
             key={movie.id}
