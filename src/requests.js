@@ -1,4 +1,4 @@
-const API_KEY = "0a16e2001aa1baf24eeb7eff144c9699";
+const API_KEY = process.env.API_KEY;
 
 // endpoints from API request
 const requests = {
