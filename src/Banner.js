@@ -17,8 +17,6 @@ function Banner() {
     fetchData();
   }, []);
 
-  // console.log(movie);
-
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
@@ -30,22 +28,19 @@ function Banner() {
         "https://image.tmdb.org/t/p/original/${movie?.backdrop_path}"
       )`,
       backgroundPosition: "center center",
-    }}> {/* background image */}
+    }}>
 
       <div className="banner__contents">
 
-        {/* title */}
         <h1 className="banner__title">
           {movie?.title || movie?.name || movie?.original_name}
         </h1>
 
-        {/* div -> 2 buttons play and mylist */}
         <div className="banner__buttons">
           <button className="banner__button">Play</button>
           <button className="banner__button">My List</button>
         </div>
 
-        {/* description */}
         <h1 className="banner__description">
           {truncate(movie?.overview)}
         </h1>
